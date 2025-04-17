@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coming Soon</title>
 
-  <!-- Updated Font Awesome -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-papqZlGZtOQnpTVcXZoVxQvXxG5bDwnHeU3G6dxkDbULzS7rDBDZjE/sTswxTGEK6FQSmPSZ4jcCJ93EXF7V0A=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
@@ -34,7 +33,7 @@
     }
 
     .wrapper {
-      animation: fadeIn 1000ms ease;
+      animation: fadeIn 800ms ease-in-out;
       max-width: 500px;
       width: 100%;
     }
@@ -84,11 +83,16 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
-    /* Responsive text */
     @media (max-width: 500px) {
       h1 {
         font-size: 2rem;
@@ -108,22 +112,15 @@
     <p>rewiring reality</p>
 
     <div class="icons">
-      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/company/cognisync-tech/?viewAsMember=true" target="_blank">
         <i class="fab fa-linkedin-in"></i>
       </a>
-
-      <!-- X (Twitter) -->
       <a href="https://x.com/Cognisynctech" target="_blank">
         <i class="fab fa-x-twitter"></i>
       </a>
-
-      <!-- Instagram -->
       <a href="https://www.instagram.com/cognisync.tech/" target="_blank">
         <i class="fab fa-instagram"></i>
       </a>
-
-      <!-- YouTube -->
       <a href="https://www.youtube.com/@Cognisynctech" target="_blank">
         <i class="fab fa-youtube"></i>
       </a>
