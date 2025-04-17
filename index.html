@@ -4,41 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coming Soon</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Updated Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papqZlGZtOQnpTVcXZoVxQvXxG5bDwnHeU3G6dxkDbULzS7rDBDZjE/sTswxTGEK6FQSmPSZ4jcCJ93EXF7V0A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <style>
-    body {
-      background: #00091B;
-      color: #fff;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    @keyframes fadeIn {
-      from { top: 20%; opacity: 0; }
-      to { top: 100%; opacity: 1; }
-    }
-
-    @-webkit-keyframes fadeIn {
-      from { top: 20%; opacity: 0; }
-      to { top: 100%; opacity: 1; }
+    body {
+      background: #00091B;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
     }
 
     .wrapper {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
       animation: fadeIn 1000ms ease;
-      -webkit-animation: fadeIn 1000ms ease;
-      text-align: center;
+      max-width: 500px;
+      width: 100%;
     }
 
     h1 {
-      font-size: 50px;
-      font-family: 'Poppins', sans-serif;
-      margin-bottom: 0;
-      line-height: 1;
+      font-size: 2.5rem;
       font-weight: 700;
     }
 
@@ -49,36 +51,54 @@
     p {
       margin: 18px 0;
       font-family: 'Muli', sans-serif;
-      font-weight: normal;
+      font-size: 1rem;
     }
 
     .icons {
       margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .icons a {
       text-decoration: none;
-    }
-
-    .icons i {
-      color: #00091B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: #fff;
-      height: 15px;
-      width: 15px;
-      padding: 13px;
-      margin: 0 10px;
-      border-radius: 50px;
+      color: #00091B;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 20px;
       border: 2px solid #fff;
-      transition: all 200ms ease;
-      text-align: center;
+      transition: all 0.3s ease;
     }
 
-    .icons i:hover, .icons i:active {
+    .icons a:hover {
+      background: transparent;
       color: #fff;
-      background: none;
-      cursor: pointer !important;
-      transform: scale(1.2);
-      -webkit-transform: scale(1.2);
+      transform: scale(1.15);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive text */
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
     }
   </style>
 </head>
@@ -86,25 +106,26 @@
   <div class="wrapper">
     <h1>Coming Soon<span class="dot">.</span></h1>
     <p>rewiring reality</p>
+
     <div class="icons">
       <!-- LinkedIn -->
       <a href="https://www.linkedin.com/company/cognisync-tech/?viewAsMember=true" target="_blank">
-        <i class="fa fa-linkedin"></i>
+        <i class="fab fa-linkedin-in"></i>
       </a>
 
-      <!-- X (formerly Twitter) -->
+      <!-- X (Twitter) -->
       <a href="https://x.com/Cognisynctech" target="_blank">
-        <i class="fa fa-twitter"></i>
+        <i class="fab fa-x-twitter"></i>
       </a>
 
       <!-- Instagram -->
       <a href="https://www.instagram.com/cognisync.tech/" target="_blank">
-        <i class="fa fa-instagram"></i>
+        <i class="fab fa-instagram"></i>
       </a>
 
       <!-- YouTube -->
       <a href="https://www.youtube.com/@Cognisynctech" target="_blank">
-        <i class="fa fa-youtube-play"></i>
+        <i class="fab fa-youtube"></i>
       </a>
     </div>
   </div>
