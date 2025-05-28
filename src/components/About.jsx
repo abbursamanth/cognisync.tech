@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   useGSAP(() => {
+    if (window.innerWidth < 640) return; // Disable animation on mobile
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: "#clip",
@@ -29,28 +30,27 @@ const About = () => {
   return (
     <div id="about" className="min-h-screen w-screen">
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
-        <p className="font-general text-sm uppercase md:text-[10px]">
-          Welcome to Zentry
+        <p className="font-general text-sm uppercase md:text-[10px] text-white">
+          Welcome to Cognisync
         </p>
 
         <AnimatedTitle
-          title="Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"
-          containerClass="mt-5 !text-black text-center"
+          title="Th<b>e</b> future is, <b>N</b>eura<b>l</b>"
+          containerClass="mt-5 !text-white text-center"
         />
 
-        <div className="about-subtext">
-          <p>The Game of Games begins—your life, now an epic MMORPG</p>
-          <p className="text-gray-500">
-            Zentry unites every player from countless games and platforms, both
-            digital and physical, into a unified Play Economy
+        <div className="about-subtext text-white">
+          <p className="text-white font-medium">The Future starts here, with you</p>
+          <p className="text-gray-400">
+            At Cognisync, we're redefining brain-computer interaction to elevate
+            human cognition and unlock peak mental performance.
           </p>
         </div>
-      </div>
-
-      <div className="h-dvh w-screen" id="clip">
+      </div>      <div className="relative h-dvh w-screen" id="clip">
         <div className="mask-clip-path about-image">
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent sm:hidden z-10"></div>
           <img
-            src="img/about.webp"
+            src="img/about1.png"
             alt="Background"
             className="absolute left-0 top-0 size-full object-cover"
           />

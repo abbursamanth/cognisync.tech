@@ -10,11 +10,10 @@ const AnimatedTitle = ({ title, containerClass }) => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const titleAnimation = gsap.timeline({
-        scrollTrigger: {
+      const titleAnimation = gsap.timeline({          scrollTrigger: {
           trigger: containerRef.current,
-          start: "100 bottom",
-          end: "center bottom",
+          start: "bottom bottom+=200", // Start animation when bottom of element is 200px above the bottom of viewport
+          end: "top center", // End when top of element reaches center of viewport
           toggleActions: "play none none reverse",
         },
       });

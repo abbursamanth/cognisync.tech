@@ -6,9 +6,9 @@ import { TiLocationArrow } from "react-icons/ti";
 
 import Button from "./Button";
 
-const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
+const navItems = ["Home", "Products", "Research", "Blog", "About", "Contact"];
 
-const NavBar = () => {
+const NavBar = ({ onProductsClick }) => {
   // State for toggling audio and visual indicator
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
@@ -71,13 +71,13 @@ const NavBar = () => {
         <nav className="flex size-full items-center justify-between p-4">
           {/* Logo and Product button */}
           <div className="flex items-center gap-7">
-            <img src="/img/logo.png" alt="logo" className="w-10" />
+            <img src="/img/logo1.png" alt="logo" className="w-10" />
 
-            <Button
-              id="product-button"
+            <Button              id="product-button"
               title="Products"
               rightIcon={<TiLocationArrow />}
               containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
+              onClick={onProductsClick}
             />
           </div>
 
@@ -97,7 +97,7 @@ const NavBar = () => {
 
             <button
               onClick={toggleAudioIndicator}
-              className="ml-10 flex items-center space-x-0.5"
+              className="ml-4 md:ml-10 flex items-center space-x-0.5"
             >
               <audio
                 ref={audioElementRef}

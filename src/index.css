@@ -7,8 +7,20 @@
 body {
   width: 100dvw;
   overflow-x: hidden;
-  background-color: #dfdff0;
+  background-color: #000; /* changed to black */
+  color: #fff;            /* set font color to white */
   font-family: "General Sans", sans-serif;
+}
+
+@font-face {
+  font-family: 'ZentryBold';
+  src: url('/fonts/YourFontName-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.custom-font {
+  font-family: 'ZentryBold', sans-serif;
 }
 
 @layer base {
@@ -67,13 +79,11 @@ body {
     font-family: "Zentry";
     font-feature-settings: "ss01" on;
   }
-
   .hero-heading {
-    @apply uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
+    @apply uppercase font-zentry font-black text-4xl sm:text-5xl md:text-7xl lg:text-9xl xl:text-[12rem];
   }
-
   .about-subtext {
-    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
+    @apply absolute bottom-[-60dvh] sm:bottom-[-80dvh] left-1/2 w-full max-w-[90%] sm:max-w-96 -translate-x-1/2 text-center font-circular-web text-base sm:text-lg md:max-w-[34rem];
   }
 
   .about-image {
@@ -140,6 +150,90 @@ body {
 
   .contact-clip-path-2 {
     clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
+  }
+
+  .products-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    filter: url("#flt_tag");
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    transition: transform 0.3s ease-out;
+  }
+
+  .products-image:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
+  }
+
+  .products-input {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+  }
+
+  .products-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .products-input:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .products-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .products-input.border-green-500\/50 {
+    border-color: rgba(34, 197, 94, 0.5);
+  }
+
+  .products-input.border-green-500\/50:focus {
+    box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.2);
+  }
+
+  .products-input.border-red-500\/50 {
+    border-color: rgba(239, 68, 68, 0.5);
+  }
+
+  .products-input.border-red-500\/50:focus {
+    box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.2);
+  }
+
+  .products-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: black;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .products-content {
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  @keyframes slideUp {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }
 
